@@ -1,8 +1,8 @@
 <?php
 
-$user = 'u47572';
-$pass = '4532025';
-$db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$user = 'u47501';
+$pass = '1469373';
+$db = new PDO('mysql:host=localhost;dbname=u47501', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_POST['delete'])) {
@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: ?delete_error=0');
         }
     } else if (!empty($_POST['edit'])) {
-        $user = 'u47572';
-        $pass = '4532025';
+        $user = 'u47501';
+        $pass = '1469373';
         $member_id = $_POST['edit'];
 
-        $db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+        $db = new PDO('mysql:host=localhost;dbname=u47501', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
         $stmt = $db->prepare("SELECT * FROM members WHERE login = ?");
         $stmt->execute(array($member_id));
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -52,9 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bio = $_POST['bio'];
         $policy = $_POST['policy'];
         $select = implode(',', $_POST['select']);
-        $user = 'u47572';
-        $pass = '4532025';
-        $db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+        $user = 'u47501';
+        $pass = '1467393';
+        $db = new PDO('mysql:host=localhost;dbname=u47501', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
         $member_id = $_COOKIE['user_id'];
 
